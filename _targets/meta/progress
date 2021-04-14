@@ -1,3 +1,15 @@
 name|type|parent|branches|progress
+index.Rmd|stem|index.Rmd|0|started
+index.Rmd|stem|index.Rmd|0|built
+notebook_rmds|stem|notebook_rmds|0|started
+notebook_rmds|stem|notebook_rmds|0|built
+index.md|stem|index.md|0|started
+index.md|stem|index.md|0|built
 spellcheck_report_results_change|stem|spellcheck_report_results_change|0|started
 spellcheck_report_results_change|stem|spellcheck_report_results_change|0|built
+notebook_mds|stem|notebook_mds|0|started
+notebook_mds|stem|notebook_mds|0|built
+notebook_bookdown_yaml|stem|notebook_bookdown_yaml|0|started
+notebook_bookdown_yaml|stem|notebook_bookdown_yaml|0|built
+notebook|stem|notebook|0|started
+notebook|stem|notebook|0|built

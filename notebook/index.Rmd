@@ -8,3 +8,5 @@ bibliography: ./assets/refs.bib
 csl: ./assets/apa.csl
 link-citations: true
 ---
+
+Source code for demo available here: https://github.com/tjmahr/notestar-demo
