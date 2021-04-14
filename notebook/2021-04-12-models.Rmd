@@ -1,0 +1,80 @@
+<!--- Timestamp to trigger book rebuilds: `r Sys.time()` --->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Apr. 12, 2021 (Mixed models)
+
+<small>Source: <code>`r knitr::current_input()`</code></small>
+
+We fit two mixed models on the sleep dataset using brms. 
+
+One with random intercepts:
+
+```{r echo = TRUE}
+library(tidyverse)
+library(brms)
+model_1 <- targets::tar_read(model_1)
+model_2 <- targets::tar_read(model_2)
+
+model_1
+```
+
+And one with random slopes.
+
+```{r, echo = TRUE}
+model_2
+```
+
+We might look at the overall, subject-level effects in the two models.
+
+```{r fig1, echo = TRUE, out.width = "80%"}
+summary_1 <- model_1 %>% 
+  posterior_summary() %>% 
+  as_tibble(rownames = "parameter") %>% 
+  mutate(model = "model_1")
+
+summary_2 <- model_2 %>% 
+  posterior_summary() %>% 
+  as_tibble(rownames = "parameter") %>% 
+  mutate(model = "model_2")
+head(summary_2)
+summary <- bind_rows(summary_1, summary_2) %>% 
+  filter(!stringr::str_detect(parameter, "^r_Subject")) 
+
+ggplot(summary) + 
+  aes(x = Estimate, y = model) + 
+  geom_pointrange(aes(xmin = Q2.5, xmax = Q97.5), position = position_dodge()) + 
+  facet_wrap("parameter", scales = "free_x", ncol = 2)
+```
+
+### Model comparison
+
+As part of the build pipeline, we computed a leave-one-out information criteria
+(LOOIC) and LOO-weighted Bayesian R-squared statistic. Let's look at the R2
+first. 
+
+```{r, echo = TRUE}
+loo_R2(model_1)
+loo_R2(model_2)
+```
+
+This comparison would favor the second model.
+
+
+Let's compare the LOOIC values. The second model has lower LOOIC values.
+
+```{r, echo = TRUE}
+loo(model_1)
+
+loo(model_2)
+```
+
+We could report a difference. 
+
+```{r}
+loo_compare(model_1, model_2)
+```
+
+These would have to multiplied by -2 to be on the deviance scale.

@@ -1,0 +1,59 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# notestar-demo
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Steps I used to make this demo.
+
+1.  Create a new project in RStudio with git repository.
+
+2.  Performed first git commit.
+
+3.  `usethis::use_readme_rmd()` to start taking notes.
+
+4.  `notestar::use_notestar()` and `notestar:::use_notestar_makefile()`
+
+5.  Edited `index.Rmd`, `_targets.R` and `R/functions.R` to create some workflow
+    items, including `data/sleepstudy.csv`.
+
+6.  Created some entries and wrote them for the demo.
+
+``` r
+notestar::notebook_create_page(date = "2021-04-10", slug = "about-demo")
+notestar::notebook_create_page(date = "2021-04-11", slug = "data-exploration")
+notestar::notebook_create_page(date = "2021-04-12", slug = "models")
+```
+
+7.  Added a csl and bib file to `notebook/book/assets` and uncommented code in
+    the `_targets.R` and `notebook/index.Rmd` to use these files.
+    
+8.  `targets::tar_make()` or the Build (Ctrl+B) shortcut in RStudio along the
+    way.
+
+9.  `notestar::notebook_browse()` to view the notebook.
+
+10. commit files and create repository with `usethis::use_github()`
+
+
+*** 
+
+Here is how the data/modeling flow into the notebook entries and into the final
+notebook.
+
+```{r graph, dpi = 144}
+targets::tar_visnetwork(targets_only = TRUE)
+```
+

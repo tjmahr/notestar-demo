@@ -1,0 +1,33 @@
+<!--- Timestamp to trigger book rebuilds: `r Sys.time()` --->
+
+## Apr. 15, 2021 (Data exploration)
+
+<small>Source: <code>`r knitr::current_input()`</code></small>
+
+Let's read in our cached dataset.
+
+```{r, echo = TRUE}
+library(tidyverse)
+data <- targets::tar_read(sleep_data)
+```
+
+This is the `sleepstudy` dataset [@belenky2003] from the lme4 package
+[@lme4-paper]. It had repeated measurements of reaction times nested in
+participants.
+
+```{r content, echo = TRUE}
+head(data)
+
+count(data, Subject)
+
+count(data, Days)
+```
+
+We can plot all the participants' data.
+
+```{r spaghetti, fig.cap = "Spaghetti plot of individual participant's data and group mean.", echo = TRUE, out.width = "80%"}
+ggplot(data) + 
+  aes(x = Days, y = Reaction) + 
+  geom_line(aes(group = Subject)) + 
+  stat_smooth(se = FALSE, method = "lm", size = 2, formula = y ~ x)
+```

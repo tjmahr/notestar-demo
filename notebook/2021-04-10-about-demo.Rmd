@@ -1,0 +1,10 @@
+<!--- Timestamp to trigger book rebuilds: `r Sys.time()` --->
+
+## Apr. 14, 2021 (About the notestar demo)
+
+<small>Source: <code>`r knitr::current_input()`</code></small>
+
+This note is a small demo. It should illustrate using targets to fit a model and
+using notestar to write up some data notes and modeling notes. It should use 
+feature an example of using pandoc citations.
+
