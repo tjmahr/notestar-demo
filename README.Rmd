@@ -9,7 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-file.copy("notebook/book/docs/notebook.html", "docs/notebook.html")
+file.copy("notebook/book/docs/notebook.html", "docs/index.html")
 ```
 
 # notestar-demo
@@ -19,7 +19,7 @@ file.copy("notebook/book/docs/notebook.html", "docs/notebook.html")
 
 An example analysis notebook created with
 [notestar](https://github.com/tjmahr/notestar). The notebook can be [previewed
-here](http://www.tjmahr.com/notestar-demo/notebook.html).
+here](http://www.tjmahr.com/notestar-demo/index.html).
 
 ***
 
@@ -59,7 +59,7 @@ modeling things in `_targets` and explore/report them in notebook entries.
 
 11. Added link to repository to index.Rmd.
 
-12. Copied the `notebook.html` file into `docs/` so that it could be 
+12. Copied the `notebook.html` file into `docs/index.html` so that it could be 
     previewed with Github Pages.
 
 *** 

@@ -8,7 +8,7 @@
 
 An example analysis notebook created with
 [notestar](https://github.com/tjmahr/notestar). The notebook can be
-[previewed here](http://www.tjmahr.com/notestar-demo/notebook.html).
+[previewed here](http://www.tjmahr.com/notestar-demo/index.html).
 
 ------------------------------------------------------------------------
 
@@ -50,8 +50,8 @@ notebook entries.
 
 11. Added link to repository to index.Rmd.
 
-12. Copied the `notebook.html` file into `docs/` so that it could be
-    previewed with Github Pages.
+12. Copied the `notebook.html` file into `docs/index.html` so that it
+    could be previewed with Github Pages.
 
 ------------------------------------------------------------------------
 
