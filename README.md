@@ -43,11 +43,11 @@ Iterating on steps 5–10 is the main flow for the notebook. We set up
 data and modeling things in `_targets` and explore/report them in
 notebook entries.
 
-10. Committed files and create repository with `usethis::use_github()`
+9.  Committed files and create repository with `usethis::use_github()`
 
-11. Added link to repository to index.Rmd.
+10. Added link to repository to index.Rmd.
 
-12. Copied the `notebook.html` file into `docs/index.html` so that it
+11. Copied the `notebook.html` file into `docs/index.html` so that it
     could be previewed with Github Pages.
 
 ------------------------------------------------------------------------
