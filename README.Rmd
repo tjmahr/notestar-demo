@@ -9,7 +9,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-file.copy("notebook/book/docs/notebook.html", "docs/index.html")
+file.copy("notebook/book/docs/notebook.html", "docs/index.html", overwrite = TRUE)
 ```
 
 # notestar-demo
@@ -31,7 +31,8 @@ Steps I used to make this demo from scratch.
 
 3.  `usethis::use_readme_rmd()` to start writing down these steps.
 
-4.  `notestar::use_notestar()` and `notestar:::use_notestar_makefile()`
+4.  `notestar::use_notestar()`, `notestar:::use_notestar_makefile()`,
+    `notestar::use_notestar_references()`
 
 5.  Edited `index.Rmd`, `_targets.R` and `R/functions.R` to create some workflow
     items, including `data/sleepstudy.csv`.
@@ -44,13 +45,10 @@ notestar::notebook_create_page(date = "2021-04-11", slug = "data-exploration")
 notestar::notebook_create_page(date = "2021-04-12", slug = "models")
 ```
 
-7.  Added a csl and bib file to `notebook/book/assets` and uncommented code in
-    the `_targets.R` and `notebook/index.Rmd` to use these files.
-    
-8.  `targets::tar_make()` or the Build (Ctrl+B) shortcut in RStudio along the
+7.  `targets::tar_make()` or the Build (Ctrl+B) shortcut in RStudio along the
     way.
 
-9.  `notestar::notebook_browse()` to view the notebook.
+8.  `notestar::notebook_browse()` to view the notebook.
 
 Iterating on steps 5--10 is the main flow for the notebook. We set up data and
 modeling things in `_targets` and explore/report them in notebook entries.

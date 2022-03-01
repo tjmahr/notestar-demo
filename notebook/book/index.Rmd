@@ -1,12 +1,12 @@
 ---
-title: "An example notebook created using notestar"
-author: "TJ Mahr"
-date: > 
+title: An example notebook created using notestar
+author: TJ Mahr
+date: |
   `r format(Sys.time(), "Updated on %A, %B %d, %Y %I:%M %p")`
 site: bookdown::bookdown_site
+link-citations: true
 bibliography: ./assets/refs.bib
 csl: ./assets/apa.csl
-link-citations: true
 ---
 
 Source code for demo available here: https://github.com/tjmahr/notestar-demo

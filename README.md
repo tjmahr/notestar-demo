@@ -20,7 +20,8 @@ Steps I used to make this demo from scratch.
 
 3.  `usethis::use_readme_rmd()` to start writing down these steps.
 
-4.  `notestar::use_notestar()` and `notestar:::use_notestar_makefile()`
+4.  `notestar::use_notestar()`, `notestar:::use_notestar_makefile()`,
+    `notestar::use_notestar_references()`
 
 5.  Edited `index.Rmd`, `_targets.R` and `R/functions.R` to create some
     workflow items, including `data/sleepstudy.csv`.
@@ -33,14 +34,10 @@ notestar::notebook_create_page(date = "2021-04-11", slug = "data-exploration")
 notestar::notebook_create_page(date = "2021-04-12", slug = "models")
 ```
 
-7.  Added a csl and bib file to `notebook/book/assets` and uncommented
-    code in the `_targets.R` and `notebook/index.Rmd` to use these
-    files.
-
-8.  `targets::tar_make()` or the Build (Ctrl+B) shortcut in RStudio
+7.  `targets::tar_make()` or the Build (Ctrl+B) shortcut in RStudio
     along the way.
 
-9.  `notestar::notebook_browse()` to view the notebook.
+8.  `notestar::notebook_browse()` to view the notebook.
 
 Iterating on steps 5–10 is the main flow for the notebook. We set up
 data and modeling things in `_targets` and explore/report them in
@@ -60,16 +57,16 @@ notebook:
 
 ``` r
 targets::tar_visnetwork(targets_only = TRUE)
-#> -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
-#> v ggplot2 3.3.3     v purrr   0.3.4
-#> v tibble  3.1.0     v dplyr   1.0.5
-#> v tidyr   1.1.3     v stringr 1.4.0
-#> v readr   1.4.0     v forcats 0.5.1
-#> -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+#> ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
+#> ✓ tibble  3.1.6     ✓ dplyr   1.0.8
+#> ✓ tidyr   1.2.0     ✓ stringr 1.4.0
+#> ✓ readr   2.1.2     ✓ forcats 0.5.1
+#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> x dplyr::filter() masks stats::filter()
 #> x dplyr::lag()    masks stats::lag()
 #> Loading required package: Rcpp
-#> Loading 'brms' package (version 2.15.0). Useful instructions
+#> Loading 'brms' package (version 2.16.3). Useful instructions
 #> can be found by typing help('brms'). A more detailed introduction
 #> to the package is available through vignette('brms_overview').
 #> 

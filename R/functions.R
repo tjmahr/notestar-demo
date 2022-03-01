@@ -10,7 +10,8 @@ fit_ri_model <- function(data) {
   model <- brm(
     Reaction ~ Days + (1 | Subject),
     data = data,
-    family = gaussian()
+    family = gaussian(),
+    backend = "cmdstanr"
   )
 
   model <- add_criterion(model, "loo")
@@ -22,7 +23,8 @@ fit_rs_model <- function(data) {
   model <- brm(
     Reaction ~ Days + (Days | Subject),
     data = data,
-    family = gaussian()
+    family = gaussian(),
+    backend = "cmdstanr"
   )
 
   model <- add_criterion(model, "loo")
